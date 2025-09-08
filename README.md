@@ -1,99 +1,76 @@
-Customer Churn Prediction – Random Forest
-📌 Overview
+# Ye ek README.md ka content hai, Python code block me rakha
+readme_content = """
+# 📊 Retail Orders Database – Querying Fundamentals
 
-This project focuses on predicting customer churn for a telecom company using machine learning. The dataset contains customer demographic, account, and service usage information. A Random Forest Classifier is used to model churn behavior, evaluate performance, and save the trained model for deployment.
+## 📌 Overview  
+This project focuses on learning and applying **basic SQL operations** using a retail dataset (`Walmart_Sales.csv`). The goal is to strengthen SQL fundamentals by performing querying, filtering, aggregation, and visualization. The dataset contains store-level weekly sales along with additional factors such as temperature, fuel price, CPI, and unemployment rate.
 
-🎯 Objectives
+---
 
-Apply data preprocessing: binary encoding, one-hot encoding, and scaling
+## 🎯 Objectives  
+- Practice **SQL basics** – SELECT, WHERE, ORDER BY, GROUP BY, LIMIT, AS  
+- Explore **aggregate functions** such as SUM, COUNT, and AVG  
+- Work with **date functions** (MONTH extraction using `strftime`)  
+- Apply **conditional logic** using CASE WHEN  
+- Visualize SQL query results in Python (Matplotlib/Seaborn)  
+- Compare **Holiday vs Non-Holiday** sales  
+- Perform extended queries like DISTINCT, BETWEEN, IN, HAVING  
 
-Split dataset into train and test sets
+---
 
-Train Random Forest Classifier for churn prediction
+## 🛠 Tools & Technologies  
+- **Google Colab / Jupyter Notebook**  
+- **SQLite (via `sqlite3` in Python)**  
+- **Pandas** for SQL integration and DataFrame handling  
+- **Matplotlib & Seaborn** for data visualization  
 
-Evaluate model performance using accuracy, classification report, and confusion matrix
+---
 
-Visualize feature importance
+## 📂 Dataset Description (`Walmart_Sales.csv`)  
+- **Store** → Store ID (1–45)  
+- **Date** → Week date  
+- **Weekly_Sales** → Sales revenue for that week  
+- **Holiday_Flag** → 1 if holiday week, 0 otherwise  
+- **Temperature** → Average temperature of the week  
+- **Fuel_Price** → Fuel cost during that week  
+- **CPI** → Consumer Price Index  
+- **Unemployment** → Unemployment rate  
 
-Save trained model for deployment or future use
+Total Records: **6435**  
 
-🛠 Tools & Technologies
+---
 
-Python (Pandas, NumPy, Scikit-learn)
+## 🔑 Steps Performed  
 
-Matplotlib & Seaborn for visualization
+1. **Loaded dataset** into Pandas and created SQLite table `orders`.  
+2. **Basic SQL Queries**  
+   - SELECT specific columns  
+   - WHERE conditions for filtering  
+   - ORDER BY for sorting  
+   - GROUP BY with SUM, AVG  
+   - LIMIT & ALIAS usage  
+   - Date functions with `strftime` for monthly trends  
+3. **Extended Queries**  
+   - DISTINCT values (unique stores)  
+   - BETWEEN for range filtering  
+   - IN for multiple store selection  
+   - HAVING with aggregated filters  
+   - CASE WHEN for Holiday vs Normal day sales  
+4. **Visualizations**  
+   - Monthly Sales Trend (line plot)  
+   - Top 10 Stores by Sales (bar chart)  
+   - Holiday vs Non-Holiday Sales (bar chart)  
+5. **Session Closure** → Exported cleaned/aggregated results and closed SQL connection.  
 
-Joblib for model saving
+---
 
-📂 Dataset Description
+## 📊 Key Insights  
+- Sales trends vary significantly across months (seasonality detected).  
+- Some stores consistently outperform others with much higher sales.  
+- Holiday weeks contribute disproportionately to overall sales.  
+- External factors like unemployment and CPI can be linked with performance.  
 
-Binary Categorical Columns: Gender, Senior Citizen, Partner, Dependents, Phone Service, Multiple Lines, Online Security, Online Backup, Device Protection, Tech Support, Streaming TV, Streaming Movies, Paperless Billing
+---
 
-Numerical Columns: Tenure Months, Monthly Charges, Total Charges
-
-Multi-class Categorical Columns (one-hot encoded): Contract, Payment Method, Internet Service
-
-Target Column: Churn Value
-
-Total Records: Depends on dataset size
-
-🔑 Steps Performed
-
-Data Preprocessing
-
-Encode binary categorical columns using LabelEncoder
-
-Use one-hot encoding for multi-class features (already encoded in this dataset)
-
-Scale numerical features using StandardScaler
-
-Train-Test Split
-
-Split dataset into X (features) and y (target)
-
-Train-test split: 80% training, 20% testing
-
-Model Training
-
-Random Forest Classifier (n_estimators=100, random_state=42)
-
-Model trained on training set
-
-Evaluation
-
-Accuracy score
-
-Classification report (precision, recall, F1-score)
-
-Confusion matrix visualization
-
-Feature Importance Visualization
-
-Top features contributing to churn prediction visualized via bar chart
-
-Model Saving
-
-Save trained model using joblib for future deployment
-
-Optional Steps
-
-Hyperparameter tuning (GridSearchCV / RandomizedSearchCV)
-
-SHAP / LIME for feature explainability
-
-ROC curve & AUC visualization
-
-📊 Key Insights
-
-Certain features like Contract type, Monthly Charges, and Tenure are strong predictors of churn.
-
-Feature importance helps identify which customer behaviors influence churn the most.
-
-Model achieves reliable accuracy on test data, suitable for business decision-making.
-
-✅ Conclusion
-
-This project demonstrates a complete workflow for customer churn prediction: preprocessing, training, evaluation, and model deployment. It highlights practical data analytics and machine learning skills for real-world business scenarios.
-
-👨‍💻 Author: Hrithik Kumar
-📌 Data Analyst
+## ✅ Conclusion  
+This project successfully demonstrates SQL fundamentals using a real-world retail dataset. It not only covers querying operations but also bridges SQL wit
