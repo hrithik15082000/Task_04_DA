@@ -1,76 +1,81 @@
-# Ye ek README.md ka content hai, Python code block me rakha
-readme_content = """
-# 📊 Retail Orders Database – Querying Fundamentals
+# 📊 Customer Churn Prediction – Random Forest
 
 ## 📌 Overview  
-This project focuses on learning and applying **basic SQL operations** using a retail dataset (`Walmart_Sales.csv`). The goal is to strengthen SQL fundamentals by performing querying, filtering, aggregation, and visualization. The dataset contains store-level weekly sales along with additional factors such as temperature, fuel price, CPI, and unemployment rate.
+This project focuses on predicting **customer churn** for a telecom company using machine learning. The dataset contains customer demographic, account, and service usage information. A **Random Forest Classifier** is used to model churn behavior, evaluate performance, and save the trained model for deployment.
 
 ---
 
 ## 🎯 Objectives  
-- Practice **SQL basics** – SELECT, WHERE, ORDER BY, GROUP BY, LIMIT, AS  
-- Explore **aggregate functions** such as SUM, COUNT, and AVG  
-- Work with **date functions** (MONTH extraction using `strftime`)  
-- Apply **conditional logic** using CASE WHEN  
-- Visualize SQL query results in Python (Matplotlib/Seaborn)  
-- Compare **Holiday vs Non-Holiday** sales  
-- Perform extended queries like DISTINCT, BETWEEN, IN, HAVING  
+- Apply **data preprocessing**: binary encoding, one-hot encoding, and scaling  
+- Split dataset into **train and test sets**  
+- Train **Random Forest Classifier** for churn prediction  
+- Evaluate model performance using **accuracy, classification report, and confusion matrix**  
+- Visualize **feature importance**  
+- Save trained model for **deployment or future use**  
 
 ---
 
 ## 🛠 Tools & Technologies  
-- **Google Colab / Jupyter Notebook**  
-- **SQLite (via `sqlite3` in Python)**  
-- **Pandas** for SQL integration and DataFrame handling  
-- **Matplotlib & Seaborn** for data visualization  
+- **Python (Pandas, NumPy, Scikit-learn)**  
+- **Matplotlib & Seaborn** for visualization  
+- **Joblib** for model saving  
 
 ---
 
-## 📂 Dataset Description (`Walmart_Sales.csv`)  
-- **Store** → Store ID (1–45)  
-- **Date** → Week date  
-- **Weekly_Sales** → Sales revenue for that week  
-- **Holiday_Flag** → 1 if holiday week, 0 otherwise  
-- **Temperature** → Average temperature of the week  
-- **Fuel_Price** → Fuel cost during that week  
-- **CPI** → Consumer Price Index  
-- **Unemployment** → Unemployment rate  
-
-Total Records: **6435**  
+## 📂 Dataset Description  
+- **Binary Categorical Columns:** Gender, Senior Citizen, Partner, Dependents, Phone Service, Multiple Lines, Online Security, Online Backup, Device Protection, Tech Support, Streaming TV, Streaming Movies, Paperless Billing  
+- **Numerical Columns:** Tenure Months, Monthly Charges, Total Charges  
+- **Multi-class Categorical Columns (one-hot encoded):** Contract, Payment Method, Internet Service  
+- **Target Column:** Churn Value  
+- **Total Records:** Depends on dataset size  
 
 ---
 
 ## 🔑 Steps Performed  
+1. **Data Preprocessing**  
+   - Encode binary categorical columns using LabelEncoder  
+   - One-hot encode multi-class features (already done)  
+   - Scale numerical features using StandardScaler  
 
-1. **Loaded dataset** into Pandas and created SQLite table `orders`.  
-2. **Basic SQL Queries**  
-   - SELECT specific columns  
-   - WHERE conditions for filtering  
-   - ORDER BY for sorting  
-   - GROUP BY with SUM, AVG  
-   - LIMIT & ALIAS usage  
-   - Date functions with `strftime` for monthly trends  
-3. **Extended Queries**  
-   - DISTINCT values (unique stores)  
-   - BETWEEN for range filtering  
-   - IN for multiple store selection  
-   - HAVING with aggregated filters  
-   - CASE WHEN for Holiday vs Normal day sales  
-4. **Visualizations**  
-   - Monthly Sales Trend (line plot)  
-   - Top 10 Stores by Sales (bar chart)  
-   - Holiday vs Non-Holiday Sales (bar chart)  
-5. **Session Closure** → Exported cleaned/aggregated results and closed SQL connection.  
+2. **Train-Test Split**  
+   - Split dataset into X (features) and y (target)  
+   - Train-test split: 80% training, 20% testing  
+
+3. **Model Training**  
+   - Random Forest Classifier (n_estimators=100, random_state=42)  
+   - Model trained on training set  
+
+4. **Evaluation**  
+   - Accuracy score  
+   - Classification report (precision, recall, F1-score)  
+   - Confusion matrix visualization  
+
+5. **Feature Importance Visualization**  
+   - Top features visualized via bar chart  
+
+6. **Model Saving**  
+   - Save trained model using joblib  
+
+7. **Optional Steps**  
+   - Hyperparameter tuning (GridSearchCV / RandomizedSearchCV)  
+   - SHAP / LIME for feature explainability  
+   - ROC curve & AUC visualization  
 
 ---
 
 ## 📊 Key Insights  
-- Sales trends vary significantly across months (seasonality detected).  
-- Some stores consistently outperform others with much higher sales.  
-- Holiday weeks contribute disproportionately to overall sales.  
-- External factors like unemployment and CPI can be linked with performance.  
+- Features like Contract type, Monthly Charges, and Tenure are strong predictors  
+- Feature importance helps understand customer behavior influence  
+- Model achieves reliable accuracy on test data  
 
 ---
 
 ## ✅ Conclusion  
-This project successfully demonstrates SQL fundamentals using a real-world retail dataset. It not only covers querying operations but also bridges SQL wit
+Complete workflow for customer churn prediction: preprocessing, training, evaluation, and deployment. Highlights practical data analytics and ML skills.
+
+👨‍💻 **Author:** Hrithik Kumar  
+📌 *Data Analyst*
+
+
+👨‍💻 **Author:** Hrithik Kumar  
+📌 *Data Analyst*
