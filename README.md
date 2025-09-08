@@ -77,5 +77,3 @@ Complete workflow for customer churn prediction: preprocessing, training, evalua
 📌 *Data Analyst*
 
 
-👨‍💻 **Author:** Hrithik Kumar  
-📌 *Data Analyst*
